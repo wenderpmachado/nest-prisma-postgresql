@@ -56,5 +56,4 @@ $ npm run test:cov
 <!-- ## :closed_book: License -->
 ## :closed_book:
 
-Released in 2022
-Made by [Wender Machado](https://github.com/wenderpmachado) 🚀
+Released in 2022 by [Wender Machado](https://github.com/wenderpmachado) 🚀
