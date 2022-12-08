@@ -5,6 +5,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import helmet from 'helmet';
 
 import { AppModule } from './app.module';
+import { PrismaService } from './database/prisma.service';
 
 function swaggerBootstrap(app: INestApplication) {
   const config = new DocumentBuilder()
@@ -18,15 +19,21 @@ function swaggerBootstrap(app: INestApplication) {
   SwaggerModule.setup('api', app, document);
 }
 
+async function prismaBootstrap(app: INestApplication) {
+  const prismaService = app.get(PrismaService);
+  await prismaService.enableShutdownHooks(app);
+}
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
-  app.useGlobalPipes(new ValidationPipe());
-  app.use(helmet());
 
   const configService = app.get(ConfigService);
   const port = configService.get('API_PORT');
 
+  app.useGlobalPipes(new ValidationPipe());
+  app.use(helmet());
+
+  await prismaBootstrap(app);
   swaggerBootstrap(app);
 
   await app.listen(port);
