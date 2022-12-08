@@ -1,5 +1,5 @@
 <h1><p align="center">
-  Subway System Challenge
+  NestJS + Prisma + Postgresql Template
 </p></h1>
 
 ## 🔧 Prerequisite
@@ -7,7 +7,7 @@
 To bring up the application, you **MUST** first:
 
 * [x] Clone the repository
-   - `git clone git@github.com:wenderpmachado/subway-system.git`
+   - `git clone git@github.com:wenderpmachado/nest-prisma-postgresql.git`
 * [x] Install the dependencies
    - `yarn install` or` npm install`
 * [x] Set the environment variables
