@@ -1,7 +1,7 @@
 {
-  "name": "@subway-system/api",
-  "version": "0.2.0",
-  "description": "Subway System API",
+  "name": "@nest-prisma-postgresql/xxx",
+  "version": "0.1.0",
+  "description": "A template to create API with NestJS + Prisma + Postgresql",
   "author": "Wender Machado <wenderpmachado@gmail.com>",
   "private": true,
   "license": "UNLICENSED",
